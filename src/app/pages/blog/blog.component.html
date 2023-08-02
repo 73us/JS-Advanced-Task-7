@@ -1,0 +1,12 @@
+<div class="container-fluid my-3">
+    <div class="display-blog">
+        <div class="card mx-1 my-2" *ngFor="let blog of userBlogs">
+            <img [src]="blog.imageURL" class="card-img-top" [alt]="'Photo of blog' + blog.id">
+            <div class="card-body">
+                <span class="text-primary">{{blog.author | slice:0:50 }}</span>
+                <h5 class="card-title">{{blog.title | slice:0:40 }}</h5>
+                <p class="card-text">{{blog.text | slice:0:200 }}</p>
+            </div>
+        </div>
+    </div>
+</div>

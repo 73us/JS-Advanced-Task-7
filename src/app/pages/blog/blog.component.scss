@@ -1,0 +1,15 @@
+.display-blog {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  .card {
+    width: 24%;
+    height: 400px;
+    margin: 10px 5px;
+    img{
+      background-size: cover;
+      height: 200px;
+    }
+  }
+}

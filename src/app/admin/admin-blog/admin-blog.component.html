@@ -1,0 +1,53 @@
+<!-- ADD/EDIT AREA START -->
+<div class="container-fluid">
+    <form>
+        <div class="mb-3">
+            <input type="text" name="blogTitle" class="form-control" placeholder="title here .."
+                [(ngModel)]="blogTitle">
+        </div>
+        <div class="mb-3">
+            <textarea name="blogText" class="form-control" placeholder="text here .." [(ngModel)]="blogText"
+                style="height: 150px; resize: none;"></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="text" name="blogAuthor" class="form-control" placeholder="author here .."
+                [(ngModel)]="blogAuthor">
+        </div>
+        <button *ngIf="!editStatus" type="button" class="btn btn-secondary"
+            [disabled]="!blogTitle || !blogText || !blogAuthor" (click)="addBlog()">Add</button>
+        <button *ngIf="editStatus" type="button" class="btn btn-info" (click)="saveBlog()">Save edit</button>
+    </form>
+</div>
+<!-- ADD/EDIT AREA END -->
+
+<!-- DISPLAY CONTENT AREA START -->
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Text</th>
+                <th scope="col">Author</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let blog of adminBlogs">
+                <th>{{ blog.id }}</th>
+                <td>{{ blog.title }}</td>
+                <td>{{ blog.text }}</td>
+                <td>{{ blog.author }}</td>
+                <td>
+                    <button type="button" class="btn btn-secondary" [disabled]="" (click)="editBlog(blog)">Edit</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-secondary" [disabled]="editStatus"
+                        (click)="deleteBlog(blog)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- DISPLAY CONTENT AREA END -->

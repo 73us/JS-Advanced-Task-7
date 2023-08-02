@@ -1,0 +1,11 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "BLOG 1",
+      "text": "Some text for 1st blog",
+      "author": "Roman",
+      "imageURL": "https://www.volynnews.com/files/news/2022/02-22/332256/IMG_6026.jpg"
+    }
+  ]
+}
